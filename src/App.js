@@ -1,13 +1,14 @@
-import React from 'react';
-import { Buttons } from './components/Buttons';
 import './App.css';
 
-function App() {
+import React from 'react';
+import Game from './components/Game';
+
+const App = () => {
   return (
-    <div className='Page'>
-        <Buttons />
+    <div className="Page">
+      <Game />
     </div>
-  );
+  )
 }
 
 export default App;

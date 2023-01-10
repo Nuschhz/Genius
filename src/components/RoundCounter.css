@@ -1,0 +1,11 @@
+
+.RoundCounter{
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 5px #000;
+    font-size: 1.5em;
+    background-color: #2d3341;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 2vh auto;
+}
