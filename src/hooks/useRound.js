@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export const useRound = () => {
+  const [round, setRound] = useState(0);
 
-    const [round, setRound] = useState(0);
+  const sumRound = useCallback(() => {
+    setRound(round + 1);
+  }, [round]);
 
-    return [round, setRound];
+  return [round, setRound, sumRound];
 };
