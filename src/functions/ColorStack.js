@@ -17,7 +17,7 @@ const stackGlow = async (colorButtons, setButtonStyles) => {
     for (let i = 0; i < stack.length; i++) {
         let newButtons = [...colorButtons];
         if (stack[i] === colorButtons[stack[i]].props.id) {
-            newButtons[stack[i]] = <colorButtons {...colorButtons[stack[i]].props} key={stack[i]} customStyle={{ ...colorButtons[stack[i]].props.customStyle, opacity: '100%' }} />;
+            newButtons[stack[i]] = <button {...colorButtons[stack[i]].props} key={stack[i]} customStyle={{ ...colorButtons[stack[i]].props.customStyle, opacity: '100%' }} />;
             setButtonStyles(newButtons);
             await waitGlow(time);
             setButtonStyles(...newButtons);

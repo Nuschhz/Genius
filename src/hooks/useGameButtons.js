@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 
 import { checkColors } from "../functions/ColorStack";
 
-export const GameButtons = createContext(styledButtons);
+export const GameButtons = createContext(null);
 
 const Button = ({ onClick, customStyle, index }) => {
     const styles = {
@@ -24,15 +24,16 @@ const defaultStyles = [
     { backgroundColor: '#F9DF74', borderColor: '#F9DF74', boxShadow: '0px 0px 12px #F6AF33', borderBottomRightRadius: '50%' }
 ];
 
-const styledButtons = defaultStyles.map((style, index) => {
-    return (
-        <Button customStyle={style} key={index} onClick={() => checkColors(index, colorButtons, setColorButtons)} id={index} />
-    );
-}
-);
-
 export const GameButtonsProvider = ({ children }) => {
 
+    const styledButtons = defaultStyles.map((style, index) => {
+        return (
+            <Button customStyle={style} key={index} onClick={() => checkColors(index, colorButtons, setColorButtons)} id={index} />
+        );
+    }
+    );
+
+    
     const [colorButtons, setColorButtons] = useState(styledButtons);
 
     <GameButtons.Provider value={[colorButtons, setColorButtons]}>
