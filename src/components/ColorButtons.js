@@ -2,22 +2,21 @@ import "./ColorButtons.css";
 
 import React, { useState } from "react";
 import StartButton from "./StartButton";
-import { useGameOver } from "../hooks/useGameOver";
-import { useRound } from "../hooks/useRound";
+import RoundCounter from "./RoundCounter";
 
 const ColorButtons = () => {
   let click = [];
   let stack = [];
   let i = 0;
+  let count = 0;
   const time = 500;
 
-  const [round, setRound] = useRound();
-  const [gameOver, setGameOver, resetGameOver] = useGameOver();
+  const [round, setRound] = useState(0);
 
   const gameIsOver = () => {
     click = [];
     stack = [];
-    setGameOver(true);
+    setRound((count = round));
   };
 
   const waitGlow = (time) => {
@@ -50,6 +49,7 @@ const ColorButtons = () => {
     let newColor = Math.floor(Math.random() * 4);
     stack.push(newColor);
     i = 0;
+    setRound((count = count + 1));
     stackGlow();
   };
 
@@ -69,7 +69,7 @@ const ColorButtons = () => {
     checkArray();
   };
 
-  const Button = ({ onClick, customStyle, index, isDisabled = false }) => {
+  const Button = ({ onClick, customStyle, index }) => {
     const styles = {
       ...customStyle,
     };
@@ -122,6 +122,7 @@ const ColorButtons = () => {
     <>
       <StartButton onClick={addColor} />
       <div className="GameButtons">{gamingButtons}</div>
+      <RoundCounter count={round} />
     </>
   );
 };

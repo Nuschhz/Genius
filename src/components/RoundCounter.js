@@ -2,11 +2,7 @@ import "./RoundCounter.css";
 
 import React from "react";
 
-import { useRound } from "../hooks/useRound";
-
-const RoundCounter = () => {
-  const count = useRound();
-
+const RoundCounter = ({ count }) => {
   return (
     <div className="RoundCounter">
       <label>Round: {count}</label>
