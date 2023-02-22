@@ -11,12 +11,23 @@ const ColorButtons = () => {
   let count = 0;
   const time = 500;
 
+  const [started, setStarted] = useState(true);
   const [round, setRound] = useState(0);
+
+  const isStarted = started ? (
+    <StartButton
+      onClick={() => {
+        addColor();
+        setStarted(false);
+      }}
+    />
+  ) : null;
 
   const gameIsOver = () => {
     click = [];
     stack = [];
     setRound((count = round));
+    setStarted(true);
   };
 
   const waitGlow = (time) => {
@@ -119,11 +130,11 @@ const ColorButtons = () => {
   const [gamingButtons, setGamingButtons] = useState(styledButtons);
 
   return (
-    <>
-      <StartButton onClick={addColor} />
+    <div>
+      {isStarted}
       <div className="GameButtons">{gamingButtons}</div>
       <RoundCounter count={round} />
-    </>
+    </div>
   );
 };
 

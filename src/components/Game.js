@@ -1,22 +1,13 @@
 import React from "react";
 
-import Menu from "./Menu";
-import GameScreen from "./GameScreen"
-
-import { useGameOver } from "../hooks/useGameOver";
+import GameScreen from "./GameScreen";
 
 const Game = () => {
-
-    const [gameOver, , resetGameOver] = useGameOver();
-
-    const start = () => resetGameOver();
-    return (
-        <>
-            {gameOver ?
-                (<Menu onClick={start} />) :
-                (<GameScreen />)}
-        </>
-    );
+  return (
+    <>
+      <GameScreen />
+    </>
+  );
 };
 
 export default Game;

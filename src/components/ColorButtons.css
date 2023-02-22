@@ -1,32 +1,32 @@
 .button {
-    height: 200px;
-    width: 200px;
-    border-style: solid;
-    opacity: 50%;
-    transition: 0.25s ease;
+  height: 200px;
+  width: 200px;
+  border-style: solid;
+  opacity: 50%;
+  transition: 0.25s ease;
 }
 
 .button:hover {
-    opacity: 70%;
-    transition: 0.25s ease;
+  opacity: 70%;
+  transition: 0.25s ease;
 }
 
 .button:active {
-    opacity: 40%;
-    transition: 0.15s ease;
+  opacity: 40%;
+  transition: 0.15s ease;
 }
 
 .GameButtons {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
-    gap: 10px;
-    min-height: 20vh;
-    min-width: 20vh;
-    border-radius: 15px;
-    padding: 40px;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0 0 20px #000000;
-    background-color: #1b202c;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  min-height: 20vh;
+  min-width: 20vh;
+  border-radius: 15px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 20px #000000;
+  background-color: #1b202c;
 }
